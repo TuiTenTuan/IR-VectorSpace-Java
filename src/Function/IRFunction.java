@@ -127,12 +127,17 @@ public class IRFunction
         {
             double numerator = 0;
             double denominator = 0;
+            double denominator1 = 0;
+            double denominator2 = 0;
 
             for(int i = 0; i < d1.length; i++)
             {
                 numerator += d1[i] * d2[i];
-                denominator += Math.pow(d1[i], 2) * Math.pow(d2[i], 2);
+                denominator1 += Math.pow(d1[i], 2);
+                denominator2 += Math.pow(d2[i], 2);
             }
+
+            denominator = Math.sqrt(denominator1 * denominator2);
 
             if(denominator != 0)
             {
